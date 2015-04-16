@@ -66,6 +66,7 @@
 
 
 //Kwame - can you explain this line below?
+//add a comment here to explain what this code does
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"Cell";
@@ -80,6 +81,15 @@
     return cell;
 }
 
+//Select Row and trigger off Alert Message
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString* selectedRecipe = [recipeNames objectAtIndex:indexPath.row];
+    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
+}
 
 /*
 // Override to support conditional editing of the table view.
