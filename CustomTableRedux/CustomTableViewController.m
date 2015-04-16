@@ -7,6 +7,7 @@
 //
 
 #import "CustomTableViewController.h"
+#import "CustomTableViewCell.h"
 
 @interface CustomTableViewController ()
 
@@ -16,6 +17,7 @@
 {
     NSArray *recipeNames;
     NSArray *recipeImages;
+    NSArray *prepTimes;
 }
 
 
@@ -31,6 +33,8 @@
                      @"instant_noodle_with_egg.jpg", @"noodle_with_bbq_pork.jpg",
                      @"japanese_noodle_with_pork.jpg", @"green_tea.jpg", @"thai_shrimp_cake.jpg",
                      @"angry_birds_cake.jpg", @"ham_and_cheese_panini.jpg"];
+    prepTimes = @[@"17 min", @"3 min", @"21 min", @"36 min", @"12 min", @"8 min", @"27 min", @"44 min", @"56 min", @"9 min", @"28 min", @"43 min", @"56 min", @"9 min", @"28 min", @"43 min"];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -47,7 +51,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+    //#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
@@ -65,12 +69,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CustomTableViewCell *cell = (CustomTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     // Configure the cell...
     //these are the attributes of the cell
-    cell.textLabel.text = [recipeNames objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.row]]; //Kwame - how do I read this?
+    cell.nameLabel.text = [recipeNames objectAtIndex:indexPath.row];
+    cell.prepTimeLabel.text = [prepTimes objectAtIndex:indexPath.row];
+    cell.thumbnailImageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.row]]; //Kwame - how do I read this?
     
     return cell;
 }

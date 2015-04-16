@@ -14,6 +14,7 @@
 		3927AD031AE0263B004A4B0C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3927AD011AE0263B004A4B0C /* LaunchScreen.xib */; };
 		3927AD0F1AE0263B004A4B0C /* CustomTableReduxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927AD0E1AE0263B004A4B0C /* CustomTableReduxTests.m */; };
 		3927AD1A1AE027EB004A4B0C /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927AD191AE027EB004A4B0C /* CustomTableViewController.m */; };
+		3927AD1E1AE04801004A4B0C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,10 @@
 		3927AD081AE0263B004A4B0C /* CustomTableReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomTableReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3927AD0D1AE0263B004A4B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3927AD0E1AE0263B004A4B0C /* CustomTableReduxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableReduxTests.m; sourceTree = "<group>"; };
-		3927AD181AE027EB004A4B0C /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
-		3927AD191AE027EB004A4B0C /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
+		3927AD181AE027EB004A4B0C /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewController.h; path = CustomTableRedux/CustomTableViewController.h; sourceTree = "<group>"; };
+		3927AD191AE027EB004A4B0C /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewController.m; path = CustomTableRedux/CustomTableViewController.m; sourceTree = "<group>"; };
+		3927AD1C1AE04801004A4B0C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +91,6 @@
 				3927ACFF1AE0263B004A4B0C /* Images.xcassets */,
 				3927AD011AE0263B004A4B0C /* LaunchScreen.xib */,
 				3927ACF21AE0263B004A4B0C /* Supporting Files */,
-				3927AD181AE027EB004A4B0C /* CustomTableViewController.h */,
-				3927AD191AE027EB004A4B0C /* CustomTableViewController.m */,
 			);
 			path = CustomTableRedux;
 			sourceTree = "<group>";
@@ -123,6 +124,10 @@
 		3927AD1B1AE027F4004A4B0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3927AD181AE027EB004A4B0C /* CustomTableViewController.h */,
+				3927AD191AE027EB004A4B0C /* CustomTableViewController.m */,
+				3927AD1C1AE04801004A4B0C /* CustomTableViewCell.h */,
+				3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			files = (
 				3927ACF81AE0263B004A4B0C /* AppDelegate.m in Sources */,
 				3927AD1A1AE027EB004A4B0C /* CustomTableViewController.m in Sources */,
+				3927AD1E1AE04801004A4B0C /* CustomTableViewCell.m in Sources */,
 				3927ACF51AE0263B004A4B0C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
