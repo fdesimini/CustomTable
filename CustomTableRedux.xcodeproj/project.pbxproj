@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		3927ACF51AE0263B004A4B0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927ACF41AE0263B004A4B0C /* main.m */; };
 		3927ACF81AE0263B004A4B0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927ACF71AE0263B004A4B0C /* AppDelegate.m */; };
-		3927ACFB1AE0263B004A4B0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927ACFA1AE0263B004A4B0C /* ViewController.m */; };
 		3927ACFE1AE0263B004A4B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3927ACFC1AE0263B004A4B0C /* Main.storyboard */; };
 		3927AD001AE0263B004A4B0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3927ACFF1AE0263B004A4B0C /* Images.xcassets */; };
 		3927AD031AE0263B004A4B0C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3927AD011AE0263B004A4B0C /* LaunchScreen.xib */; };
 		3927AD0F1AE0263B004A4B0C /* CustomTableReduxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927AD0E1AE0263B004A4B0C /* CustomTableReduxTests.m */; };
+		3927AD1A1AE027EB004A4B0C /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927AD191AE027EB004A4B0C /* CustomTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		3927ACF41AE0263B004A4B0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3927ACF61AE0263B004A4B0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3927ACF71AE0263B004A4B0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3927ACF91AE0263B004A4B0C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3927ACFA1AE0263B004A4B0C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3927ACFD1AE0263B004A4B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3927ACFF1AE0263B004A4B0C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3927AD021AE0263B004A4B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3927AD081AE0263B004A4B0C /* CustomTableReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomTableReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3927AD0D1AE0263B004A4B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3927AD0E1AE0263B004A4B0C /* CustomTableReduxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableReduxTests.m; sourceTree = "<group>"; };
+		3927AD181AE027EB004A4B0C /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
+		3927AD191AE027EB004A4B0C /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +63,7 @@
 		3927ACE61AE0263B004A4B0C = {
 			isa = PBXGroup;
 			children = (
+				3927AD1B1AE027F4004A4B0C /* Model */,
 				3927ACF11AE0263B004A4B0C /* CustomTableRedux */,
 				3927AD0B1AE0263B004A4B0C /* CustomTableReduxTests */,
 				3927ACF01AE0263B004A4B0C /* Products */,
@@ -83,12 +84,12 @@
 			children = (
 				3927ACF61AE0263B004A4B0C /* AppDelegate.h */,
 				3927ACF71AE0263B004A4B0C /* AppDelegate.m */,
-				3927ACF91AE0263B004A4B0C /* ViewController.h */,
-				3927ACFA1AE0263B004A4B0C /* ViewController.m */,
 				3927ACFC1AE0263B004A4B0C /* Main.storyboard */,
 				3927ACFF1AE0263B004A4B0C /* Images.xcassets */,
 				3927AD011AE0263B004A4B0C /* LaunchScreen.xib */,
 				3927ACF21AE0263B004A4B0C /* Supporting Files */,
+				3927AD181AE027EB004A4B0C /* CustomTableViewController.h */,
+				3927AD191AE027EB004A4B0C /* CustomTableViewController.m */,
 			);
 			path = CustomTableRedux;
 			sourceTree = "<group>";
@@ -117,6 +118,13 @@
 				3927AD0D1AE0263B004A4B0C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3927AD1B1AE027F4004A4B0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3927ACFB1AE0263B004A4B0C /* ViewController.m in Sources */,
 				3927ACF81AE0263B004A4B0C /* AppDelegate.m in Sources */,
+				3927AD1A1AE027EB004A4B0C /* CustomTableViewController.m in Sources */,
 				3927ACF51AE0263B004A4B0C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

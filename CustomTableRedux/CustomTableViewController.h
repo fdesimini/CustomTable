@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CustomTableViewController.h
 //  CustomTableRedux
 //
 //  Created by Frank Desimini on 2015-04-16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CustomTableViewController : UITableViewController
 
 @end
-
