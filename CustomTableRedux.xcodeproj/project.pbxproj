@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3910CB921AE1A2C6008CD499 /* recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3910CB911AE1A2C6008CD499 /* recipes.plist */; };
 		3927ACF51AE0263B004A4B0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927ACF41AE0263B004A4B0C /* main.m */; };
 		3927ACF81AE0263B004A4B0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927ACF71AE0263B004A4B0C /* AppDelegate.m */; };
 		3927ACFE1AE0263B004A4B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3927ACFC1AE0263B004A4B0C /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3910CB911AE1A2C6008CD499 /* recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = recipes.plist; path = ../recipes.plist; sourceTree = "<group>"; };
 		3927ACEF1AE0263B004A4B0C /* CustomTableRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTableRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3927ACF31AE0263B004A4B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3927ACF41AE0263B004A4B0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				3927ACFC1AE0263B004A4B0C /* Main.storyboard */,
 				3927ACFF1AE0263B004A4B0C /* Images.xcassets */,
 				3927AD011AE0263B004A4B0C /* LaunchScreen.xib */,
+				3910CB911AE1A2C6008CD499 /* recipes.plist */,
 				3927ACF21AE0263B004A4B0C /* Supporting Files */,
 			);
 			path = CustomTableRedux;
@@ -214,6 +217,7 @@
 			files = (
 				3927ACFE1AE0263B004A4B0C /* Main.storyboard in Resources */,
 				3927AD031AE0263B004A4B0C /* LaunchScreen.xib in Resources */,
+				3910CB921AE1A2C6008CD499 /* recipes.plist in Resources */,
 				3927AD001AE0263B004A4B0C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +434,7 @@
 				3927AD141AE0263B004A4B0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3927AD151AE0263B004A4B0C /* Build configuration list for PBXNativeTarget "CustomTableReduxTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +443,7 @@
 				3927AD171AE0263B004A4B0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

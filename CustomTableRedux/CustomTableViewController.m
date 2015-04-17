@@ -17,7 +17,7 @@
 {
     NSMutableArray *recipeNames;
     NSArray *recipeImages;
-    NSArray *prepTimes;
+    NSArray *recipePrepTimes;
     //fix for double checkmark - Step 1
     BOOL recipeChecked[16];
 }
@@ -27,18 +27,11 @@
     [super viewDidLoad];
     
     //initialize table data
-    recipeNames = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast",
-                    @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut",
-                    @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-    
-    recipeImages = @[@"egg_benedict.jpg", @"mushroom_risotto.jpg", @"full_breakfast.jpg",
-                     @"hamburger.jpg", @"ham_and_egg_sandwich.jpg", @"creme_brelee.jpg",
-                     @"white_chocolate_donut.jpg", @"starbucks_coffee.jpg", @"vegetable_curry.jpg",
-                     @"instant_noodle_with_egg.jpg", @"noodle_with_bbq_pork.jpg",
-                     @"japanese_noodle_with_pork.jpg", @"green_tea.jpg", @"thai_shrimp_cake.jpg",
-                     @"angry_birds_cake.jpg", @"ham_and_cheese_panini.jpg"];
-    prepTimes = @[@"17 min", @"3 min", @"21 min", @"36 min", @"12 min", @"8 min", @"27 min", @"44 min", @"56 min", @"9 min", @"28 min", @"43 min", @"56 min", @"9 min", @"28 min", @"43 min"];
-    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"recipes" ofType:@"plist"];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    recipeNames = [dict objectForKey:@"Name"];
+    recipeImages = [dict objectForKey:@"Image"];
+    recipePrepTimes = [dict objectForKey:@"PrepTime"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -79,7 +72,7 @@
     // Configure the cell...
     //these are the attributes of the cell
     cell.nameLabel.text = [recipeNames objectAtIndex:indexPath.row];
-    cell.prepTimeLabel.text = [prepTimes objectAtIndex:indexPath.row];
+    cell.prepTimeLabel.text = [recipePrepTimes objectAtIndex:indexPath.row];
     cell.thumbnailImageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.row]]; //Kwame - how do I read this?
     
     //fix for double check mark - Step3
