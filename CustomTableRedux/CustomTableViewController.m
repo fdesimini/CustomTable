@@ -18,6 +18,8 @@
     NSArray *recipeNames;
     NSArray *recipeImages;
     NSArray *prepTimes;
+    //fix for double checkmark - Step 1
+    BOOL recipeChecked[16];
 }
 
 
@@ -78,6 +80,15 @@
     cell.prepTimeLabel.text = [prepTimes objectAtIndex:indexPath.row];
     cell.thumbnailImageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.row]]; //Kwame - how do I read this?
     
+    //fix for double check mark - Step3
+    if (recipeChecked[indexPath.row]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    
+    
     return cell;
 }
 
@@ -89,7 +100,37 @@
     
     // Display Alert Message
     [messageAlert show];
+
+    //display a checkmark
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    //challenge - toggle the checkmark
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+  
+    
+    //remove grey
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //Fix for double check mark - Step 2
+    recipeChecked[indexPath.row] = YES;
 }
+
+
+
+//deselect a checkmark "tableView:didDeselectRowAtIndexPath:"
+/*
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+*/
+
+
 
 /*
 // Override to support conditional editing of the table view.
