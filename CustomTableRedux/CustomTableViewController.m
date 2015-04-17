@@ -15,7 +15,7 @@
 
 @implementation CustomTableViewController
 {
-    NSArray *recipeNames;
+    NSMutableArray *recipeNames;
     NSArray *recipeImages;
     NSArray *prepTimes;
     //fix for double checkmark - Step 1
@@ -26,9 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    recipeNames = @[@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast",
+    //initialize table data
+    recipeNames = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast",
                     @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut",
-                    @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini"];
+                    @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    
     recipeImages = @[@"egg_benedict.jpg", @"mushroom_risotto.jpg", @"full_breakfast.jpg",
                      @"hamburger.jpg", @"ham_and_egg_sandwich.jpg", @"creme_brelee.jpg",
                      @"white_chocolate_donut.jpg", @"starbucks_coffee.jpg", @"vegetable_curry.jpg",
@@ -120,6 +122,19 @@
     recipeChecked[indexPath.row] = YES;
 }
 
+//Delect a row - code to switch to edit mode for row deletion
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //insert code to remove the actual data from the array *recipeNames
+    [recipeNames removeObjectAtIndex:indexPath.row];
+    
+    //Request table view to reload
+    //[tableView reloadData];
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+}
 
 
 //deselect a checkmark "tableView:didDeselectRowAtIndexPath:"
