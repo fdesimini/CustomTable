@@ -12,8 +12,10 @@
 
 - (void)viewDidLoad
 {
-    //Set the labe text with the selected recipe
+    //Set the label text with the selected recipe
     self.recipeLabel.text = self.recipeName;
+    //Set the label text with the recipe prep time
+    self.prepTimeLabel.text = self.prepTime;
 }
 
 @end
