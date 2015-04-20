@@ -8,6 +8,7 @@
 
 #import "CustomTableViewController.h"
 #import "CustomTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface CustomTableViewController ()
 
@@ -32,7 +33,7 @@
     recipeNames = [dict objectForKey:@"Name"];
     recipeImages = [dict objectForKey:@"Image"];
     recipePrepTimes = [dict objectForKey:@"PrepTime"];
-    
+       
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -130,14 +131,14 @@
 }
 
 
-//deselect a checkmark "tableView:didDeselectRowAtIndexPath:"
-/*
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        DetailViewController *destViewController = segue.destinationViewController;
+        destViewController.recipeName = [recipeNames objectAtIndex:indexPath.row];
+    }
 }
-*/
-
 
 
 /*
