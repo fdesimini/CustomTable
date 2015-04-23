@@ -130,14 +130,14 @@
     
 }
 
-
+//Create a seque to the Recipe Detail scene
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.recipeName = [recipeNames objectAtIndex:indexPath.row];
-        //added this myself!
+        //added this myself
         destViewController.prepTime = [recipePrepTimes objectAtIndex:indexPath.row];
     }
 }

@@ -17,6 +17,7 @@
 		3927AD1A1AE027EB004A4B0C /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927AD191AE027EB004A4B0C /* CustomTableViewController.m */; };
 		3927AD1E1AE04801004A4B0C /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */; };
 		39A37B4D1AE5883F0046D64C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A37B4C1AE5883F0046D64C /* DetailViewController.m */; };
+		39BE5D501AE975D500C943CE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BE5D4F1AE975D500C943CE /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		39A37B4B1AE5883F0046D64C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		39A37B4C1AE5883F0046D64C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		39BE5D4E1AE975D500C943CE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		39BE5D4F1AE975D500C943CE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 		3927ACE61AE0263B004A4B0C = {
 			isa = PBXGroup;
 			children = (
+				39BE5D4E1AE975D500C943CE /* AboutViewController.h */,
+				39BE5D4F1AE975D500C943CE /* AboutViewController.m */,
 				39A37B4B1AE5883F0046D64C /* DetailViewController.h */,
 				39A37B4C1AE5883F0046D64C /* DetailViewController.m */,
 				3927AD1B1AE027F4004A4B0C /* Model */,
@@ -241,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BE5D501AE975D500C943CE /* AboutViewController.m in Sources */,
 				39A37B4D1AE5883F0046D64C /* DetailViewController.m in Sources */,
 				3927ACF81AE0263B004A4B0C /* AppDelegate.m in Sources */,
 				3927AD1A1AE027EB004A4B0C /* CustomTableViewController.m in Sources */,
