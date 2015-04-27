@@ -44,16 +44,16 @@
 		3927AD081AE0263B004A4B0C /* CustomTableReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomTableReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3927AD0D1AE0263B004A4B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3927AD0E1AE0263B004A4B0C /* CustomTableReduxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableReduxTests.m; sourceTree = "<group>"; };
-		3927AD181AE027EB004A4B0C /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewController.h; path = CustomTableRedux/CustomTableViewController.h; sourceTree = "<group>"; };
-		3927AD191AE027EB004A4B0C /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewController.m; path = CustomTableRedux/CustomTableViewController.m; sourceTree = "<group>"; };
-		3927AD1C1AE04801004A4B0C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
-		3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
-		39A37B4B1AE5883F0046D64C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		39A37B4C1AE5883F0046D64C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		39BE5D4E1AE975D500C943CE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		39BE5D4F1AE975D500C943CE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		39BE5D511AE98CAC00C943CE /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
-		39BE5D521AE98CAC00C943CE /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		3927AD181AE027EB004A4B0C /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
+		3927AD191AE027EB004A4B0C /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
+		3927AD1C1AE04801004A4B0C /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = ../CustomTableViewCell.h; sourceTree = "<group>"; };
+		3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewCell.m; path = ../CustomTableViewCell.m; sourceTree = "<group>"; };
+		39A37B4B1AE5883F0046D64C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		39A37B4C1AE5883F0046D64C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
+		39BE5D4E1AE975D500C943CE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = ../AboutViewController.h; sourceTree = "<group>"; };
+		39BE5D4F1AE975D500C943CE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = ../AboutViewController.m; sourceTree = "<group>"; };
+		39BE5D511AE98CAC00C943CE /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recipe.h; path = ../Recipe.h; sourceTree = "<group>"; };
+		39BE5D521AE98CAC00C943CE /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Recipe.m; path = ../Recipe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +77,6 @@
 		3927ACE61AE0263B004A4B0C = {
 			isa = PBXGroup;
 			children = (
-				39BE5D4E1AE975D500C943CE /* AboutViewController.h */,
-				39BE5D4F1AE975D500C943CE /* AboutViewController.m */,
-				39A37B4B1AE5883F0046D64C /* DetailViewController.h */,
-				39A37B4C1AE5883F0046D64C /* DetailViewController.m */,
-				3927AD1B1AE027F4004A4B0C /* Model */,
 				3927ACF11AE0263B004A4B0C /* CustomTableRedux */,
 				3927AD0B1AE0263B004A4B0C /* CustomTableReduxTests */,
 				3927ACF01AE0263B004A4B0C /* Products */,
@@ -100,6 +95,16 @@
 		3927ACF11AE0263B004A4B0C /* CustomTableRedux */ = {
 			isa = PBXGroup;
 			children = (
+				39BE5D511AE98CAC00C943CE /* Recipe.h */,
+				39BE5D521AE98CAC00C943CE /* Recipe.m */,
+				3927AD181AE027EB004A4B0C /* CustomTableViewController.h */,
+				3927AD191AE027EB004A4B0C /* CustomTableViewController.m */,
+				3927AD1C1AE04801004A4B0C /* CustomTableViewCell.h */,
+				3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */,
+				39A37B4B1AE5883F0046D64C /* DetailViewController.h */,
+				39A37B4C1AE5883F0046D64C /* DetailViewController.m */,
+				39BE5D4E1AE975D500C943CE /* AboutViewController.h */,
+				39BE5D4F1AE975D500C943CE /* AboutViewController.m */,
 				3927ACF61AE0263B004A4B0C /* AppDelegate.h */,
 				3927ACF71AE0263B004A4B0C /* AppDelegate.m */,
 				3927ACFC1AE0263B004A4B0C /* Main.storyboard */,
@@ -135,19 +140,6 @@
 				3927AD0D1AE0263B004A4B0C /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3927AD1B1AE027F4004A4B0C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				39BE5D511AE98CAC00C943CE /* Recipe.h */,
-				39BE5D521AE98CAC00C943CE /* Recipe.m */,
-				3927AD181AE027EB004A4B0C /* CustomTableViewController.h */,
-				3927AD191AE027EB004A4B0C /* CustomTableViewController.m */,
-				3927AD1C1AE04801004A4B0C /* CustomTableViewCell.h */,
-				3927AD1D1AE04801004A4B0C /* CustomTableViewCell.m */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *recipeLabel;
-@property (strong, nonatomic) NSString *recipeName;
-
-//I'm implementing this myself (not in book)
+@property (strong, nonatomic) IBOutlet UIImageView *recipeImageView;
+@property (strong, nonatomic) IBOutlet UITextView *ingredientsTextView;
 @property (strong, nonatomic) IBOutlet UILabel *prepTimeLabel; //this variable is so we can change what's written on it
-@property (strong, nonatomic) NSString *prepTime; //this variable is so we can pass along the data
+
+@property (nonatomic, strong) Recipe *recipe;
+
+//@property (strong, nonatomic) NSString *prepTime; //this variable is so we can pass along the data
 
 @end
