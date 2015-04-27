@@ -173,20 +173,18 @@
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    
-    
-    
+
     return cell;
 }
 
 //Select Row and trigger off Alert Message
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* selectedRecipe = [recipes objectAtIndex:indexPath.row];
-    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+   // NSString* selectedRecipe = [recipes objectAtIndex:indexPath.row];
+  /*  UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
     // Display Alert Message
-    [messageAlert show];
+    [messageAlert show];*/
 
     //display a checkmark
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -227,9 +225,12 @@
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *destViewController = segue.destinationViewController;
-        destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
+       // destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
         //added this myself
-        destViewController.prepTime = [recipes objectAtIndex:indexPath.row];
+        //destViewController.prepTime = [recipes objectAtIndex:indexPath.row];
+        Recipe *recipe = [recipes objectAtIndex:indexPath.row];
+        destViewController.recipeName = recipe.name;
+        destViewController.prepTime = recipe.prepTime;
     }
 }
 
