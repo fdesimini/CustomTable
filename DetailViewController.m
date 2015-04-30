@@ -1,4 +1,4 @@
-//
+    //
 //  DetailViewController.m
 //  CustomTableRedux
 //
@@ -12,10 +12,19 @@
 
 - (void)viewDidLoad
 {
-    //Set the label text with the selected recipe
-   self.recipeLabel.text = self.recipeName;
-    //Set the label text with the recipe prep time
-    self.prepTimeLabel.text = self.prepTime;
+    //sets the title of navigation bar as the name of recipe
+    self.title = self.recipe.name;
+    //configure the preparation time label and set the recipe image
+    self.prepTimeLabel.text = self.recipe.prepTime;
+    self.recipeImageView.image = [UIImage imageNamed:self.recipe.image];
+    
+    //turns the ingredients array into multiple lines of text for the ingredients text view.
+    NSMutableString *ingredientsText = [NSMutableString string];
+    for (NSString *ingredient in self.recipe.ingredients) {
+        [ingredientsText appendFormat:@"%@\n", ingredient];
+    }
+    
+    self.ingredientsTextView.text = ingredientsText;
 }
 
 @end
