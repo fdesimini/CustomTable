@@ -10,4 +10,7 @@
 
 @interface CustomTableViewController : UITableViewController
 
+@property (strong, nonatomic) UISearchController *searchController;
+
+
 @end

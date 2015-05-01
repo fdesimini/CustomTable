@@ -11,36 +11,34 @@
 #import "DetailViewController.h"
 #import "Recipe.h"
 
-@interface CustomTableViewController ()
+@interface CustomTableViewController () <UISearchResultsUpdating>
 
 @end
 
 @implementation CustomTableViewController
 {
-    /*
-    NSMutableArray *recipeNames;
-    NSArray *recipeImages;
-    NSArray *recipePrepTimes;
-    */
     
     NSMutableArray *recipes;
-    
+    //new variable to store search results
+    NSArray *searchResults;
+        
     //fix for double checkmark - Step 1
     BOOL recipeChecked[16];
 }
 
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    [self filterContentForSearchText:_searchController.searchBar.text];
+    [self.tableView reloadData];
+}
+
+- (void)filterContentForSearchText:(NSString *)searchText {
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    searchResults = [recipes filteredArrayUsingPredicate:resultPredicate];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    /*
-    //initialize table data
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"recipes" ofType:@"plist"];
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
-    recipeNames = [dict objectForKey:@"Name"];
-    recipeImages = [dict objectForKey:@"Image"];
-    recipePrepTimes = [dict objectForKey:@"PrepTime"];
-    */
     
     //Initialize the recipes array
     Recipe *recipe1 = [Recipe new];
@@ -143,10 +141,21 @@
     recipes = [NSMutableArray arrayWithObjects:recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7, recipe8, recipe9, recipe10, recipe11, recipe12, recipe13, recipe14, recipe15, recipe16, nil];
     
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //Adding a search bar
+    _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    [_searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView= _searchController.searchBar;
+    self.definesPresentationContext = YES;
+    
+    //search results: The first line assigns the current class as the search results updater
+    _searchController.searchResultsUpdater = self;
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -162,12 +171,16 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (_searchController.active) {
+        return searchResults.count;
+    }else{
     return [recipes count];
-    
-    //#warning Incomplete method implementation.
+    }
+
     // Return the number of rows in the section.
-    return 0;
+   return 0;
 }
 
 //This method calls in the data needed to populate the cells of the tableview
@@ -177,10 +190,16 @@
     CustomTableViewCell *cell = (CustomTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     // Configure the cell...
-    Recipe *recipe = [recipes objectAtIndex:indexPath.row];
+    Recipe *recipe;
+    if (_searchController.active) {
+        recipe = [searchResults objectAtIndex:indexPath.row];
+    }else{
+        recipe = [recipes objectAtIndex:indexPath.row];
+    }
     cell.nameLabel.text = recipe.name;
     cell.thumbnailImageView.image = [UIImage imageNamed:recipe.image];
     cell.prepTimeLabel.text = recipe.prepTime;
+    
     
     //fix for double check mark - Step3
     if (recipeChecked[indexPath.row]) {
@@ -220,7 +239,7 @@
     recipeChecked[indexPath.row] = YES;
 }
 
-//Delect a row - code to switch to edit mode for row deletion
+//Delete a row - code to switch to edit mode for row deletion
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -243,6 +262,14 @@
         Recipe *recipe = [recipes objectAtIndex:indexPath.row];
         destViewController.recipe = recipe;
 
+        if (_searchController.active) {
+            recipe = [searchResults objectAtIndex:indexPath.row];
+        }else{
+            recipe = [recipes objectAtIndex:indexPath.row];
+        }
+        //this passes data to the detail page
+        destViewController.recipe = recipe;
+        
     }
 }
 
